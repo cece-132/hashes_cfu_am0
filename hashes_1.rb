@@ -1,4 +1,4 @@
-
+require 'pry'
 #Activity:
 
 # In the below exercises, write code that achieves
@@ -11,26 +11,31 @@ p foods
 
 # Write code that prints all of the 'keys' of the foods variable
 # you created above:
-foods = {
-  apples: 23,
-  grapes: 507,
-  eggs: 48,
-  watermelon: 67
-}
-p [foods.keys]
+@foods_hash = {}
+  foods[0].each do |food, int|
+    if @foods_hash["#{food}"].nil?
+      @foods_hash["#{food}"] = int
+    else
+      @foods_hash["#{food}"] += int
+    end
+  end
+  
+p @foods_hash.keys
 
 # Write code that prints all of the 'values' of the foods variable
 # you created above:
-p foods.values
+
+p @foods_hash.values
 
 # Write code that prints the value of the second food of the foods variable
 # you created above:
 #p [foods.values = "grapes"]
 
+find_second_value = @foods_hash.keys[1]
+
 # Write code that adds a food to the foods hash.
 # Then, print the updated hash:
-p foods
-
+p find_second_value
 
 #-------------------
 # Part 2: Email
@@ -42,10 +47,10 @@ p foods
 
 email = {
   "sender":"ne@aol.com",
-  "recipient": "ce@aol.com",
-  "greeting": "Hello Ms. Eckels,",
+  "recipient": "te@aol.com",
+  "greeting": "Hello Mr. Tanjiro",
   "body": "You have almost made it to friday!",
-  "signature": "Sincerly, Candace"
+  "signature": "Sincerly, Nezuko"
 }
 
 
@@ -57,7 +62,7 @@ p email
 
 # Write code that prints all of the 'keys' of the email hash
 # you created above:
-# p email.keys
+p email.keys
 
 # Write code that prints all of the 'values' of the email hash
 # you created above:
@@ -113,24 +118,26 @@ p posts[0]
 # key-value pairs you used in your email Hash above.
 # Then, print the email Array to the Terminal.
 
-email = {
-  "sender":"ne@aol.com",
-  "recipient": "ce@aol.com",
-  "greeting": "Hello Ms. Eckels,",
-  "body": "You have almost made it to friday!",
-  "signature": "Sincerly, Candace"
-},
-{
-  sender:"zee@aol.com",
-  recipient: "ce@aol.com",
-  greeting: "Hello CE,",
-  body: "You have almost made it to friday!",
-  signature: "Sincerly, Henderson"
-},
-{
-  sender:"bee@aol.com",
-  recipient: "ce@aol.com",
-  greeting: "Hello CEe,",
-  body: "You have almost made it to friday!",
-  signature: "Sincerly, B",
-}
+email = [
+  {
+    "sender": "ne@aol.com",
+    "recipient": "ce@aol.com",
+    "greeting": "Hello Ms. Eckels,",
+    "body": "You have almost made it to friday!",
+    "signature": "Sincerly, Candace"
+  },
+  {
+    "sender": "zee@aol.com",
+    "recipient": "ce@aol.com",
+    "greeting": "Hello CE,",
+    "body": "You have almost made it to friday!",
+    "signature": "Sincerly, Henderson"
+  },
+  {
+    "sender": "bee@aol.com",
+    "recipient": "ce@aol.com",
+    "greeting": "Hello CEe,",
+    "body": "You have almost made it to friday!",
+    "signature": "Sincerly, B",
+  }
+]
